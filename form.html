@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Форма отправкий</title>
+</head>
+<body>
+
+  <!--Форма отправикий-->
+    <form id="order-form">
+        <div>
+          <label for="name">Имя:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="phone">Телефон:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+          <label for="message">Сообщение:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Отправить</button>
+      </form>
+
+      
+      <script >const form = document.getElementById('order-form');
+
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const message = document.getElementById('message').value;
+          // здесь можно добавить код для отправки данных на сервер
+          console.log(name, email, phone, message);
+          alert('Ваш заказ успешно отправлен!');
+          form.reset();
+        });
+        </script>
+    
+</body>
+</html>
